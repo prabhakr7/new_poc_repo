@@ -1,0 +1,22 @@
+---
+- # ====== Authentication: APEX Accounts =======================
+  id: 17822765602702123660
+  identification: 
+    name: APEX Accounts
+
+  subscription: 
+    version-number: 39431898760292
+
+  settings: 
+    type: No Authentication
+    username: nobody
+
+  login-processing: 
+    switch-in-session: false
+
+  post-logout-url: 
+    post-logout-url: 'f?p=&APP_ID.:customers'
+
+  real-application-security: 
+    ras-mode: Disabled
+
