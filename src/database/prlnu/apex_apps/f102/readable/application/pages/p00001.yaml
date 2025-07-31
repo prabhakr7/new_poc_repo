@@ -41,10 +41,10 @@ help:
   help-text: No help is available for this page.
 
 regions: 
-- # ====== Region: Customers by Category-helllooo ==============
+- # ====== Region: Customers by Category-helllooo-clone ========
   id: 1079360011101406985
   identification: 
-    name: Customers by Category-helllooo
+    name: Customers by Category-helllooo-clone
     type: Chart
 
   source: 
@@ -4261,7 +4261,7 @@ buttons:
 
   layout: 
     sequence: 10
-    region: Customers by Category-helllooo # 1079360011101406985
+    region: Customers by Category-helllooo-clone # 1079360011101406985
     slot: EDIT
     start-new-layout: false
     start-new-row: true
@@ -4585,7 +4585,7 @@ dynamic-actions:
 
     affected-elements: 
       selection-type: Region
-      region: Customers by Category-helllooo # 1079360011101406985
+      region: Customers by Category-helllooo-clone # 1079360011101406985
 
     execution: 
       sequence: 50
@@ -4807,7 +4807,7 @@ dynamic-actions:
 
     affected-elements: 
       selection-type: Region
-      region: Customers by Category-helllooo # 1079360011101406985
+      region: Customers by Category-helllooo-clone # 1079360011101406985
 
     execution: 
       sequence: 50
