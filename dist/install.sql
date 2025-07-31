@@ -2,7 +2,7 @@
 -- By default, a project will not use substitution variables and allows blank
 -- lines in sql statements.
 
-set define off
+set define on
 set sqlblanklines on
 
 -- Prechecks modifiable helper
@@ -17,6 +17,6 @@ set sqlblanklines on
 
 -- Kick off Liquibase
 prompt "Installing/updating schemas"
-lb update -log -changelog-file releases/main.changelog.xml -search-path "."
+lb update -log -changelog-file releases/main.changelog.xml -search-path "." -defaults-file &DEFAULTS_FILE 
 
 --@utils/recompile.sql
