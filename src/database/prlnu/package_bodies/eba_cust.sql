@@ -60,6 +60,7 @@ create or replace package body eba_cust as
         end if;
 
         return l_access_level_id;
+        dbms_output.put_line('hi! welcome to demo');
     exception
         when no_data_found then
             -- If no user exists with passed username, do a final check if reader access is set to any authenticated user
@@ -183,4 +184,4 @@ end eba_cust;
 /
 
 
--- sqlcl_snapshot {"hash":"4fc69a5bd913a4665e743f4b3bdab446e367c03d","type":"PACKAGE_BODY","name":"EBA_CUST","schemaName":"PRLNU","sxml":""}
+-- sqlcl_snapshot {"hash":"ffd4690e05a1a2e011446b0b95db313ccaf6f9ad","type":"PACKAGE_BODY","name":"EBA_CUST","schemaName":"PRLNU","sxml":""}
