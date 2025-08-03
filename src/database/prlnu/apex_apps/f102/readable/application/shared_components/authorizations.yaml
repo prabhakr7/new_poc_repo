@@ -65,13 +65,13 @@
     name: ADMINISTRATION RIGHTS
 
   subscription: 
-    version-number: 1089051550
+    version-number: 39433067439152
 
   authorization-scheme: 
     type: PL/SQL Function Returning Boolean
 
   settings: 
-    pl/sql-function-body: 'return eba_cust.get_authorization_level(:APP_USER) = 3;'
+    pl/sql-function-body: return true;
 
   server-cache: 
     evaluation-point: Once per Session

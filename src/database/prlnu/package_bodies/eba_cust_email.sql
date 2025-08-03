@@ -121,6 +121,7 @@ create or replace package body eba_cust_email as
     ) return varchar2 is
         l_retval varchar2(10) := 'EXCLUDE';
     begin
+        dbms_output.put_line('hiiiiiiiii');
         for c1 in (
             select
                 upper(build_option_status) as bo_value
@@ -304,4 +305,4 @@ end eba_cust_email;
 /
 
 
--- sqlcl_snapshot {"hash":"7dec399290f28fcd69d2ba18dee5fdc6b0543ed6","type":"PACKAGE_BODY","name":"EBA_CUST_EMAIL","schemaName":"PRLNU","sxml":""}
+-- sqlcl_snapshot {"hash":"123d874281250c2a2f9d00b086db6bc143b0c31d","type":"PACKAGE_BODY","name":"EBA_CUST_EMAIL","schemaName":"PRLNU","sxml":""}

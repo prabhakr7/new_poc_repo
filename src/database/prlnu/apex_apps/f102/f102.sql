@@ -25,7 +25,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2024.11.30'
-,p_release=>'24.2.6'
+,p_release=>'24.2.7'
 ,p_default_workspace_id=>8225212949981826
 ,p_default_application_id=>102
 ,p_default_id_offset=>8469045289319807
@@ -79,7 +79,7 @@ prompt APPLICATION 102 - Customers
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:        110
---   Version:         24.2.6
+--   Version:         24.2.7
 --   Instance ID:     8225066671419368
 --
 
@@ -155,7 +155,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_value_04=>'Customers'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>31
-,p_version_scn=>39431944469849
+,p_version_scn=>39433067479943
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -2208,9 +2208,9 @@ wwv_flow_imp_shared.create_security_scheme(
  p_id=>wwv_flow_imp.id(15698200031781635234)
 ,p_name=>'ADMINISTRATION RIGHTS'
 ,p_scheme_type=>'NATIVE_FUNCTION_BODY'
-,p_attribute_01=>'return eba_cust.get_authorization_level(:APP_USER) = 3;'
+,p_attribute_01=>'return true;'
 ,p_error_message=>'Insufficient privileges, user is not an Administrator'
-,p_version_scn=>1089051550
+,p_version_scn=>39433067439152
 ,p_caching=>'BY_USER_BY_SESSION'
 );
 end;
@@ -12258,12 +12258,13 @@ wwv_flow_imp_page.create_page_plug(
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(19999519090210451317)
-,p_plug_name=>'More Filters'
+,p_plug_name=>'More Filters _clone_hi'
 ,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--scrollBody:t-Form--stretchInputs'
 ,p_plug_template=>2664334895415463485
 ,p_plug_display_sequence=>126
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'REGION_POSITION_02'
+,p_location=>null
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'expand_shortcuts', 'N',
   'output_as', 'HTML')).to_clob
@@ -74064,4 +74065,4 @@ prompt  ...done
 
 
 
--- sqlcl_snapshot {"hash":"e8d7ad5b45bd9db6567f8f9fbf0050cc7b93cfcb","type":"APEX_APPLICATIONS","name":"f102","schemaName":"PRLNU","sxml":""}
+-- sqlcl_snapshot {"hash":"69563fd006b73473ad794b5337f1219d6e0f70c3","type":"APEX_APPLICATIONS","name":"f102","schemaName":"PRLNU","sxml":""}
