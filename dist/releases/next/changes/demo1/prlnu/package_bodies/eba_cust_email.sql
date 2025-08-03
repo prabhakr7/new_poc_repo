@@ -1,3 +1,7 @@
+-- liquibase formatted sql
+-- changeset PRLNU:1754232434616 stripComments:false  logicalFilePath:demo1/prlnu/package_bodies/eba_cust_email.sql runAlways:false runOnChange:false replaceIfExists:true failOnError:true
+-- sqlcl_snapshot src/database/prlnu/package_bodies/eba_cust_email.sql:7dec399290f28fcd69d2ba18dee5fdc6b0543ed6:123d874281250c2a2f9d00b086db6bc143b0c31d:alter
+
 create or replace package body eba_cust_email as
 
     c_fb_subject constant varchar2(500) := eba_cust_fw.get_preference_value('APPLICATION_TITLE')
@@ -304,5 +308,3 @@ create or replace package body eba_cust_email as
 end eba_cust_email;
 /
 
-
--- sqlcl_snapshot {"hash":"123d874281250c2a2f9d00b086db6bc143b0c31d","type":"PACKAGE_BODY","name":"EBA_CUST_EMAIL","schemaName":"PRLNU","sxml":""}
