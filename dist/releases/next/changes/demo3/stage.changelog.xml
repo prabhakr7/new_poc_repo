@@ -3,6 +3,6 @@
                    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
-<!--CHANGES-->
-<include file="changes/demo3/stage.changelog.xml" relativeToChangelogFile="true"/>
+<include file="prlnu/tables/eba_cust_clicks.sql" relativeToChangelogFile="true"/>
+<include file="prlnu/package_bodies/eba_cust_email.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
