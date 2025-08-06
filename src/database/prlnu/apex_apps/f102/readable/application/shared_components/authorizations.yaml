@@ -65,7 +65,7 @@
     name: ADMINISTRATION RIGHTS
 
   subscription: 
-    version-number: 39433067439152
+    version-number: 39433303638226
 
   authorization-scheme: 
     type: PL/SQL Function Returning Boolean
@@ -85,20 +85,16 @@
     name: APPLICATION SENTRY
 
   subscription: 
-    version-number: 1089051550
+    version-number: 39433303607789
 
   authorization-scheme: 
     type: PL/SQL Function Returning Boolean
 
   settings: 
     pl/sql-function-body: |
-      begin
-          if :APP_PAGE_ID = 101 then
-              return true;
-          else
-              return (eba_cust.get_authorization_level(:APP_USER) > 0);
-          end if;
-      end;
+      return true;
+              
+      
 
   server-cache: 
     evaluation-point: Once per Session

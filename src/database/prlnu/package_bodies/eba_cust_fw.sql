@@ -109,6 +109,7 @@ create or replace package body eba_cust_fw as
         l_tags_string varchar2(32767);
         i             integer;
     begin
+        dbms_output.put_line('hi welcome to demo2');
         l_tags := apex_util.string_to_table(p_tags, ',');
         for i in 1..l_tags.count loop
             --remove all whitespace, including tabs, spaces, line feeds and carraige returns with a single space
@@ -517,4 +518,4 @@ end eba_cust_fw;
 /
 
 
--- sqlcl_snapshot {"hash":"b08657a4aecf810e9c7f8190986b8b2931f359c7","type":"PACKAGE_BODY","name":"EBA_CUST_FW","schemaName":"PRLNU","sxml":""}
+-- sqlcl_snapshot {"hash":"fd6e8571792ce655d32d1d26b27b7b3adf276459","type":"PACKAGE_BODY","name":"EBA_CUST_FW","schemaName":"PRLNU","sxml":""}

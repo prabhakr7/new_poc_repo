@@ -3208,10 +3208,10 @@ regions:
       template-options: 
       - '#DEFAULT#'
 
-- # ====== Region: More Filters _clone_hi ======================
+- # ====== Region: More Filters ================================
   id: 19999519090210451317
   identification: 
-    name: More Filters _clone_hi
+    name: More Filters
     type: Static Content
 
   layout: 
@@ -3647,7 +3647,7 @@ page-items:
 
   layout: 
     sequence: 10
-    region: More Filters _clone_hi # 19999519090210451317
+    region: More Filters # 19999519090210451317
     slot: BODY
     alignment: Left
     start-new-layout: false
@@ -3709,7 +3709,7 @@ page-items:
 
   layout: 
     sequence: 20
-    region: More Filters _clone_hi # 19999519090210451317
+    region: More Filters # 19999519090210451317
     slot: BODY
     alignment: Left
     start-new-layout: false
@@ -3774,7 +3774,7 @@ page-items:
 
   layout: 
     sequence: 30
-    region: More Filters _clone_hi # 19999519090210451317
+    region: More Filters # 19999519090210451317
     slot: BODY
     alignment: Left
     start-new-layout: false
@@ -3836,7 +3836,7 @@ page-items:
 
   layout: 
     sequence: 40
-    region: More Filters _clone_hi # 19999519090210451317
+    region: More Filters # 19999519090210451317
     slot: BODY
     alignment: Left
     start-new-layout: false
@@ -3901,7 +3901,7 @@ page-items:
 
   layout: 
     sequence: 50
-    region: More Filters _clone_hi # 19999519090210451317
+    region: More Filters # 19999519090210451317
     slot: BODY
     alignment: Left
     start-new-layout: false
@@ -3966,7 +3966,7 @@ page-items:
 
   layout: 
     sequence: 60
-    region: More Filters _clone_hi # 19999519090210451317
+    region: More Filters # 19999519090210451317
     slot: BODY
     alignment: Left
     start-new-layout: false
@@ -4031,7 +4031,7 @@ page-items:
 
   layout: 
     sequence: 70
-    region: More Filters _clone_hi # 19999519090210451317
+    region: More Filters # 19999519090210451317
     slot: BODY
     alignment: Left
     start-new-layout: false
