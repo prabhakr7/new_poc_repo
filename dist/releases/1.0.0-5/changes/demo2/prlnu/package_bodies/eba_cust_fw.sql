@@ -1,3 +1,7 @@
+-- liquibase formatted sql
+-- changeset PRLNU:1754465443728 stripComments:false  logicalFilePath:demo2/prlnu/package_bodies/eba_cust_fw.sql runAlways:false runOnChange:false replaceIfExists:true failOnError:true
+-- sqlcl_snapshot src/database/prlnu/package_bodies/eba_cust_fw.sql:b08657a4aecf810e9c7f8190986b8b2931f359c7:fd6e8571792ce655d32d1d26b27b7b3adf276459:alter
+
 create or replace package body eba_cust_fw as
 
     function conv_txt_html (
@@ -517,5 +521,3 @@ create or replace package body eba_cust_fw as
 end eba_cust_fw;
 /
 
-
--- sqlcl_snapshot {"hash":"fd6e8571792ce655d32d1d26b27b7b3adf276459","type":"PACKAGE_BODY","name":"EBA_CUST_FW","schemaName":"PRLNU","sxml":""}

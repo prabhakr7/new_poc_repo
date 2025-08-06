@@ -25,7 +25,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2024.11.30'
-,p_release=>'24.2.6'
+,p_release=>'24.2.7'
 ,p_default_workspace_id=>8225212949981826
 ,p_default_application_id=>102
 ,p_default_id_offset=>8469045289319807
@@ -79,7 +79,7 @@ prompt APPLICATION 102 - Customers
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:        110
---   Version:         24.2.6
+--   Version:         24.2.7
 --   Instance ID:     8225066671419368
 --
 
@@ -155,7 +155,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_value_04=>'Customers'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>31
-,p_version_scn=>39431898760292
+,p_version_scn=>39433303727843
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -2208,9 +2208,9 @@ wwv_flow_imp_shared.create_security_scheme(
  p_id=>wwv_flow_imp.id(15698200031781635234)
 ,p_name=>'ADMINISTRATION RIGHTS'
 ,p_scheme_type=>'NATIVE_FUNCTION_BODY'
-,p_attribute_01=>'return eba_cust.get_authorization_level(:APP_USER) = 3;'
+,p_attribute_01=>'return true;'
 ,p_error_message=>'Insufficient privileges, user is not an Administrator'
-,p_version_scn=>1089051550
+,p_version_scn=>39433303638226
 ,p_caching=>'BY_USER_BY_SESSION'
 );
 end;
@@ -2222,15 +2222,11 @@ wwv_flow_imp_shared.create_security_scheme(
 ,p_name=>'APPLICATION SENTRY'
 ,p_scheme_type=>'NATIVE_FUNCTION_BODY'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'begin',
-'    if :APP_PAGE_ID = 101 then',
-'        return true;',
-'    else',
-'        return (eba_cust.get_authorization_level(:APP_USER) > 0);',
-'    end if;',
-'end;'))
+'return true;',
+'        ',
+''))
 ,p_error_message=>'You are not authorized to view this application, either because you have not been granted access, or your account has been locked. Please contact the application administrator.'
-,p_version_scn=>1089051550
+,p_version_scn=>39433303607789
 ,p_caching=>'BY_USER_BY_SESSION'
 );
 end;
@@ -11274,7 +11270,7 @@ wwv_flow_imp_page.create_page_plug(
 );
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(13565309438875186943)
-,p_name=>'Recently Updated Customers --hhiiiii'
+,p_name=>'Recently Updated Customers --demooo'
 ,p_region_name=>'CUST_RCNT_UPD'
 ,p_template=>4072358936313175081
 ,p_display_sequence=>66
@@ -33876,7 +33872,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_imp.id(14887231908134943557)
 ,p_prompt=>'Search'
-,p_placeholder=>'Search Customers'
+,p_placeholder=>'Search Customers in my demo2 branch...'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>64
 ,p_cMaxlength=>4000
@@ -74064,4 +74060,4 @@ prompt  ...done
 
 
 
--- sqlcl_snapshot {"hash":"6c66a4e99fe43d710d72adea9ae72b61b26d7d3f","type":"APEX_APPLICATIONS","name":"f102","schemaName":"PRLNU","sxml":""}
+-- sqlcl_snapshot {"hash":"1186391ecbdf151368e0463f5cec0a46a170460a","type":"APEX_APPLICATIONS","name":"f102","schemaName":"PRLNU","sxml":""}
