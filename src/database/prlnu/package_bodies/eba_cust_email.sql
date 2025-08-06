@@ -121,7 +121,6 @@ create or replace package body eba_cust_email as
     ) return varchar2 is
         l_retval varchar2(10) := 'EXCLUDE';
     begin
-        dbms_output.put_line('hiiiiiiiii');
         for c1 in (
             select
                 upper(build_option_status) as bo_value
@@ -153,6 +152,7 @@ create or replace package body eba_cust_email as
         l_feedback_type varchar2(32000) := apex_escape.html(p_feedback_type);
         l_feedback      varchar2(32000) := apex_escape.html(p_feedback);
     begin
+        dbms_output.put_line('hiiiiiiiii demmoooo3');
         l_clob := m;
         m := m
              || replace(
@@ -305,4 +305,4 @@ end eba_cust_email;
 /
 
 
--- sqlcl_snapshot {"hash":"123d874281250c2a2f9d00b086db6bc143b0c31d","type":"PACKAGE_BODY","name":"EBA_CUST_EMAIL","schemaName":"PRLNU","sxml":""}
+-- sqlcl_snapshot {"hash":"ec4cc4103e8c1fcf060bfa83f7809f8cabb12c6e","type":"PACKAGE_BODY","name":"EBA_CUST_EMAIL","schemaName":"PRLNU","sxml":""}

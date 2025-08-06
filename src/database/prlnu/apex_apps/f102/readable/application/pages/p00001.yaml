@@ -530,10 +530,10 @@ regions:
       tick-label: 
         show: true
 
-- # ====== Region: Customers by Industry =======================
+- # ====== Region: Customers by Industry demo3 =================
   id: 1128433572064218947
   identification: 
-    name: Customers by Industry
+    name: Customers by Industry demo3
     type: Chart
 
   source: 
@@ -571,6 +571,7 @@ regions:
     - '#DEFAULT#'
     - js-showMaximizeButton
     - i-h320
+    - t-Region--accent4
     - t-Region--hiddenOverflow
     css-classes: 
     - scrollable-region
@@ -4621,7 +4622,7 @@ dynamic-actions:
 
     affected-elements: 
       selection-type: Region
-      region: Customers by Industry # 1128433572064218947
+      region: Customers by Industry demo3 # 1128433572064218947
 
     execution: 
       sequence: 70
@@ -4825,7 +4826,7 @@ dynamic-actions:
 
     affected-elements: 
       selection-type: Region
-      region: Customers by Industry # 1128433572064218947
+      region: Customers by Industry demo3 # 1128433572064218947
 
     execution: 
       sequence: 70
