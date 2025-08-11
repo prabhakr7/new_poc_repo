@@ -52,8 +52,7 @@ pipeline {
                     
                     sh '''
                     cd apex_poc
-                    echo "set sqlformat json;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}" 
-                    echo "project config -list;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                    echo "PROJECT GEN-ARTIFACT;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                     '''
 
                     }
