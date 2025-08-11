@@ -49,6 +49,11 @@ pipeline {
                     sh '''
                     echo "select * from APEX_WORKSPACES;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                     '''
+                    
+                    sh '''
+                    cd apex_poc
+                    echo "project config -list;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                    '''
 
                     }
                 withCredentials([usernamePassword(credentialsId: 'uat_db_cred', usernameVariable: 'DB_USER', passwordVariable: 'DB_PASS')]) {
