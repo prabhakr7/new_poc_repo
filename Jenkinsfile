@@ -47,20 +47,47 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'original_db_cred', usernameVariable: 'DB_USER', passwordVariable: 'DB_PASS')]) {
                     sh '''
-                    echo "select * from APEX_WORKSPACES;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
-                    '''
-                    
-                    sh '''
-                    cd apex_poc
-                    echo "PROJECT GEN-ARTIFACT;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
-                    cd artifact
-                    ls
+                    echo "select user from dual;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                     '''
 
                     }
                 withCredentials([usernamePassword(credentialsId: 'uat_db_cred', usernameVariable: 'DB_USER', passwordVariable: 'DB_PASS')]) {
                     sh '''
-                    echo "select * from APEX_WORKSPACES;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                    echo "select user from dual;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                    '''
+
+                    }
+            }
+        }
+        stage('project release and gen-artifact in DEV') {
+            environment {
+                 DEVDB_AUTH = credentials('original_db_cred')
+                 TNS_ADMIN = "/Users/prlnu/wallet_myadb"
+            }
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'original_db_cred', usernameVariable: 'DB_USER', passwordVariable: 'DB_PASS')]) {
+                    sh '''
+                    cd apex_poc
+                    echo "PROJECT GEN-ARTIFACT;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                    '''
+                    }
+
+            }
+        }
+        stage('project deploy to UAT') {
+            environment {
+                 UATDB_AUTH = credentials('uat_db_cred')
+                 TNS_ADMIN = "/Users/prlnu/wallet_myadb"
+            }
+            steps {
+
+                withCredentials([usernamePassword(credentialsId: 'uat_db_cred', usernameVariable: 'DB_USER', passwordVariable: 'DB_PASS')]) {
+                    sh '''
+                        FILE=$(ls -t artifact/*.zip | head -n 1)
+                        echo "Using artifact: $FILE"
+                        
+                        echo "DEFINE DEFAULTS_FILE=utils/properties/poc.properties;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                        echo "project deploy -file $FILE -debug;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                     '''
 
                     }
