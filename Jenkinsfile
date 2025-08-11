@@ -53,6 +53,8 @@ pipeline {
                     sh '''
                     cd apex_poc
                     echo "PROJECT GEN-ARTIFACT;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                    cd artifact
+                    ls
                     '''
 
                     }
