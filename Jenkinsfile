@@ -24,7 +24,7 @@ pipeline {
                 sh '''
                     echo "Downloading SQLcl..."
                     cd apex_poc
-                    curl -L -o sqlcl.zip https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip
+                    curl -L -o sqlcl.zip https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-25.2.1.0.zip
                     unzip -o sqlcl.zip -d sqlcl
                     rm sqlcl.zip
                 '''
