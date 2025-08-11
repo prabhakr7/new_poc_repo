@@ -85,12 +85,8 @@ pipeline {
                     sh '''
                         cd apex_poc/artifact
                         ls
-                        // FILE=$(ls -t artifact/*.zip | head -n 1)
-                        // echo "Using artifact: $FILE"
                         cd ..
                         
-                        echo "DEFINE DEFAULTS_FILE=utils/properties/poc.properties;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
-                        echo "project deploy -file $FILE -debug;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                     '''
 
                     }
