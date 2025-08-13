@@ -88,7 +88,6 @@ pipeline {
                         echo "Using artifact: $FILE"
                         cd ..
                         $SQLCL -S "${DB_USER}/${DB_PASS}@${DB}" <<EOF
-UPDATE DATABASECHANGELOGLOCK SET LOCKED = 0, LOCKGRANTED = NULL, LOCKEDBY = NULL WHERE ID = 1;
 DEFINE DEFAULTS_FILE=utils/properties/poc.properties;
 DEFINE Contacts=3;
 project deploy -file artifact/$FILE -debug -v;
