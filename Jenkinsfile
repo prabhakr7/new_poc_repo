@@ -91,7 +91,6 @@ pipeline {
 UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=NULL, LOCKEDBY=NULL WHERE ID=1;
 DEFINE DEFAULTS_FILE=utils/properties/poc.properties;
 DEFINE Contacts=3;
-SET DEFINE OFF;
 project deploy -file artifact/$FILE -debug -v;
 EOF
 
