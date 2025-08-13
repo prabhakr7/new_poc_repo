@@ -6,7 +6,7 @@
     "startup" : [ "ALTER SESSION DISABLE PARALLEL DML" ]
   },
   "schemas" : [ "PRLNU" ],
-  "lastReleaseVersion" : "1.0.0-6",
+  "lastReleaseVersion" : "1.0.0-7",
   "export" : {
     "format" : {
       "enable" : true
