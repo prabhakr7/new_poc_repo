@@ -90,6 +90,7 @@ pipeline {
 
                         echo "DEFINE DEFAULTS_FILE=utils/properties/poc.properties;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                         echo "DEFINE Contacts=3;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                        echo "SET DEFINE OFF;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                         cd artifact
                         echo "project deploy -file $FILE -debug -v;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
                         
