@@ -87,13 +87,16 @@ pipeline {
                         FILE=$(ls -t *.zip | head -n 1)
                         echo "Using artifact: $FILE"
                         cd ..
-                
-                        "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}" <<EOF
-                        DEFINE DEFAULTS_FILE=utils/properties/poc.properties;
-                        DEFINE Contacts=3;
-                        commit;
-                        project deploy -file artifact/$FILE -debug -v;
-                        EOF
+                        $SQLCL -S "${DB_USER}/${DB_PASS}@${DB}" <<EOF
+UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=NULL, LOCKEDBY=NULL WHERE ID=1;
+DEFINE DEFAULTS_FILE=utils/properties/poc.properties;
+DEFINE Contacts=3;
+SET DEFINE OFF;
+project deploy -file artifact/$FILE -debug -v;
+EOF
+
+
+
                     '''
 
                     }
