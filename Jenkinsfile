@@ -91,7 +91,6 @@ pipeline {
                         "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}" <<EOF
                         DEFINE DEFAULTS_FILE=utils/properties/poc.properties;
                         DEFINE Contacts=3;
-                        SET DEFINE OFF;
                         cd artifact
                         project deploy -file $FILE -debug -v;
                         EOF
