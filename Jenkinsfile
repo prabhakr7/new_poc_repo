@@ -87,13 +87,14 @@ pipeline {
                         FILE=$(ls -t *.zip | head -n 1)
                         echo "Using artifact: $FILE"
                         cd ..
-
-                        echo "DEFINE DEFAULTS_FILE=utils/properties/poc.properties;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
-                        echo "DEFINE Contacts=3;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
-                        echo "SET DEFINE OFF;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
+                
+                        "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}" <<EOF
+                        DEFINE DEFAULTS_FILE=utils/properties/poc.properties;
+                        DEFINE Contacts=3;
+                        SET DEFINE OFF;
                         cd artifact
-                        echo "project deploy -file $FILE -debug -v;" | "$SQLCL" -S "${DB_USER}/${DB_PASS}@${DB}"
-                        
+                        project deploy -file $FILE -debug -v;
+                        EOF
                     '''
 
                     }
