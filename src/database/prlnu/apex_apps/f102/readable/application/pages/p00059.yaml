@@ -2716,7 +2716,7 @@ regions:
             t := null;
         end;
         if t is null or t = '&nbsp;' or t = 'Preference does not exist' then
-           sys.htp.p('<p>Track and Manage Customers</p>');
+           sys.htp.p('<p>Track and Manage Customers for poc_demo</p>');
         else
            sys.htp.p('<p>'||apex_escape.html(t)||'</p>');
         end if;
@@ -3325,7 +3325,7 @@ page-items:
     type: Select List
 
   label: 
-    label: Geography
+    label: Geography poc_demo
     alignment: Left
 
   settings: 
@@ -3908,7 +3908,7 @@ page-items:
     type: Select List
 
   label: 
-    label: Product
+    label: Product demo_poc
     alignment: Left
 
   settings: 
